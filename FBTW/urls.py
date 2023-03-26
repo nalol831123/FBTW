@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from create_league import views
+from create_league import views as CreateLeagueViews
+from GamerTeam import views as GamerTeamViews
 
 router = DefaultRouter()
-router.register(r'create_league', views.GroupViewSet)
+router.register(r'create_league', CreateLeagueViews.GroupViewSet)
+router.register(r'GamerTeam/Gamer', GamerTeamViews.GamerViewSet)
+router.register(r'GamerTeam/Team', GamerTeamViews.TeamViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
