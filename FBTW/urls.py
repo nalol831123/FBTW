@@ -22,6 +22,7 @@ from Player import views as PlayerViews
 
 router = DefaultRouter()
 router.register(r'create_league', CreateLeagueViews.GroupViewSet)
+
 router.register(r'GamerTeam/Gamer', GamerTeamViews.GamerViewSet)
 router.register(r'GamerTeam/Team', GamerTeamViews.TeamViewSet)
 router.register(r'Player', PlayerViews.PlayerViewSet)
@@ -29,4 +30,5 @@ router.register(r'Player', PlayerViews.PlayerViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('v1/api/', include('Player.urls')),
 ]
