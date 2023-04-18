@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'create_league',
     'GamerTeam',
-    'Player'
+    'Player',
+    'DraftGame',
+    'channels',
 ]
 
 MIDDLEWARE = [
